@@ -17,7 +17,8 @@ class Tensorflowdb(tfds.core.GeneratorBasedBuilder):
 
   VERSION = tfds.core.Version('1.0.1')
   RELEASE_NOTES = {
-      '1.0.1': 'Initial release.',
+      '1.0.0': 'Initial release.',
+      '1.0.1': 'Images format fix'
   }
   MANUAL_DOWNLOAD_INSTRUCTIONS = "Download FormatedImages.zip"
 
