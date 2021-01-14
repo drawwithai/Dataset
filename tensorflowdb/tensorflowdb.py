@@ -15,9 +15,9 @@ _CITATION = """
 class Tensorflowdb(tfds.core.GeneratorBasedBuilder):
   """DatasetBuilder for tensorflowdb dataset."""
 
-  VERSION = tfds.core.Version('1.0.0')
+  VERSION = tfds.core.Version('1.0.1')
   RELEASE_NOTES = {
-      '1.0.0': 'Initial release.',
+      '1.0.1': 'Initial release.',
   }
   MANUAL_DOWNLOAD_INSTRUCTIONS = "Download FormatedImages.zip"
 
