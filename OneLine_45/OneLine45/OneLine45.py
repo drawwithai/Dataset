@@ -42,7 +42,7 @@ class Oneline45(tfds.core.GeneratorBasedBuilder):
   def _split_generators(self, dl_manager: tfds.download.DownloadManager):
     """Returns SplitGenerators."""
     # TODO(OneLine45): Downloads the data and defines the splits
-    path = dl_manager.download_and_extract('https://todo-data-url')
+    path = dl_manager.download_and_extract('https://github.com/drawwithai/Dataset/OneLine_45/OneLine_45.zip')
 
     # TODO(OneLine45): Returns the Dict[split names, Iterator[Key, Example]]
     return {
