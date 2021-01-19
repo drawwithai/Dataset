@@ -28,7 +28,7 @@ class Oneline45(tfds.core.GeneratorBasedBuilder):
         description=_DESCRIPTION,
         features=tfds.features.FeaturesDict({
             # These are the features of your dataset like images, labels ...
-            'image': tfds.features.Image(shape=(None, None, 3)),
+            'image': tfds.features.Image(shape=(None, None, 1)),
             'label': tfds.features.ClassLabel(names=['no', 'yes']),
         }),
         # If there's a common (input, target) tuple from the
@@ -46,7 +46,7 @@ class Oneline45(tfds.core.GeneratorBasedBuilder):
 
     # TODO(OneLine45): Returns the Dict[split names, Iterator[Key, Example]]
     return {
-        'train': self._generate_examples(path / 'OneLine45_train'),
+        'train': self._generate_examples(path / 'OneLine_45-train'),
     }
 
   def _generate_examples(self, path):
