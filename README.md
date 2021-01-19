@@ -1,5 +1,7 @@
 # Dataset 
-Main dataset for the ptut
+Main datasets for the ptut
 
 ## Installation
-$ cd tensorflowdb && tfds build
+```
+cd <dataset folder> && tfds build
+```
