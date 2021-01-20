@@ -53,7 +53,7 @@ class Oneline45(tfds.core.GeneratorBasedBuilder):
     """Yields examples."""
     # TODO(OneLine45): Yields (key, example) tuples from the dataset
     for f in path.glob('*.jpg'):
-      yield 'key', {
+      yield str(f), {
           'image': f,
           'label': 'yes',
       }
