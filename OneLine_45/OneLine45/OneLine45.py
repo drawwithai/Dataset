@@ -28,7 +28,7 @@ class Oneline45(tfds.core.GeneratorBasedBuilder):
         description=_DESCRIPTION,
         features=tfds.features.FeaturesDict({
             # These are the features of your dataset like images, labels ...
-            'image': tfds.features.Image(shape=(512, 512, 3)),
+            'image': tfds.features.Image(shape=(512, 512, 1)),
             'label': tfds.features.ClassLabel(names=['no', 'yes']),
         }),
     )
