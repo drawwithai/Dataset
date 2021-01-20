@@ -4,7 +4,7 @@ import tensorflow_datasets as tfds
 
 # TODO(OneLine45): Markdown description  that will appear on the catalog page.
 _DESCRIPTION = """
-Contains 45 images of single line draws.
+# Contains 45 images of single line drawings, 512*512, .jpg
 """
 
 # TODO(OneLine45): BibTeX citation
@@ -28,15 +28,9 @@ class Oneline45(tfds.core.GeneratorBasedBuilder):
         description=_DESCRIPTION,
         features=tfds.features.FeaturesDict({
             # These are the features of your dataset like images, labels ...
-            'image': tfds.features.Image(shape=(512, 512, 1)),
+            'image': tfds.features.Image(shape=(512, 512, 3)),
             'label': tfds.features.ClassLabel(names=['no', 'yes']),
         }),
-        # If there's a common (input, target) tuple from the
-        # features, specify them here. They'll be used if
-        # `as_supervised=True` in `builder.as_dataset`.
-        supervised_keys=('image', 'label'),  # Set to `None` to disable
-        homepage='https://dataset-homepage/',
-        citation=_CITATION,
     )
 
   def _split_generators(self, dl_manager: tfds.download.DownloadManager):
@@ -53,7 +47,7 @@ class Oneline45(tfds.core.GeneratorBasedBuilder):
     """Yields examples."""
     # TODO(OneLine45): Yields (key, example) tuples from the dataset
     for f in path.glob('*.jpg'):
-      yield str(f), {
+      yield f.name, {
           'image': f,
-          'label': 'yes',
+          'label': 'no',
       }
