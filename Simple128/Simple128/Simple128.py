@@ -41,7 +41,7 @@ class Simple128(tfds.core.GeneratorBasedBuilder):
   def _split_generators(self, dl_manager: tfds.download.DownloadManager):
     """Returns SplitGenerators."""
     # TODO(Simple128): Downloads the data and defines the splits
-    path = dl_manager.download_and_extract('https://github.com/drawwithai/Dataset/blob/raw/Simple128/Simple128.zip')
+    path = dl_manager.download_and_extract('https://github.com/drawwithai/Dataset/raw/main/Simple128/Simple128.zip')
 
     # TODO(Simple128): Returns the Dict[split names, Iterator[Key, Example]]
     return {
