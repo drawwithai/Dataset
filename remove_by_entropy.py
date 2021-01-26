@@ -35,7 +35,7 @@ with open(filePath, 'w', newline='') as F:
     print("CSV SAVED")
 
 # ---- PATHS ----
-imageDirPath = './FormatedImages/'
+imageDirPath = path
 nbImages = int(input("Number of images to keep : "))
 
 with open(filePath) as csvDataFile:
