@@ -28,14 +28,9 @@ class Simple128(tfds.core.GeneratorBasedBuilder):
         description=_DESCRIPTION,
         features=tfds.features.FeaturesDict({
             # These are the features of your dataset like images, labels ...
-            'image': tfds.features.Image(shape=(512, 512, 1))
-        }),
-        # If there's a common (input, target) tuple from the
-        # features, specify them here. They'll be used if
-        # `as_supervised=True` in `builder.as_dataset`.
-        supervised_keys=(None),  # Set to `None` to disable
-        homepage='https://dataset-homepage/',
-        citation=_CITATION,
+            'image': tfds.features.Image(shape=(512, 512, 1)),
+            'label': tfds.features.ClassLabel(names=['no', 'yes']),
+        })
     )
 
   def _split_generators(self, dl_manager: tfds.download.DownloadManager):
@@ -45,7 +40,7 @@ class Simple128(tfds.core.GeneratorBasedBuilder):
 
     # TODO(Simple128): Returns the Dict[split names, Iterator[Key, Example]]
     return {
-        'train': self._generate_examples(path / 'Simple_train'),
+        'train': self._generate_examples(path / 'Simple128-train'),
     }
 
   def _generate_examples(self, path):
@@ -54,4 +49,5 @@ class Simple128(tfds.core.GeneratorBasedBuilder):
     for f in path.glob('*.jpg'):
       yield f.name, {
           'image': f,
+          'label': 'no',
       }
